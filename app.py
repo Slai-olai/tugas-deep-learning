@@ -109,7 +109,7 @@ def prediksi_gru_numpy(weights_path, X_input):
 # --- UI STREAMLIT SIDEBAR ---
 st.sidebar.header("📁 Konfigurasi Data & Model")
 uploaded_file = st.sidebar.file_uploader("Upload File CSV Harga Pangan Terbaru", type=["csv"])
-model_dir = st.sidebar.text_input("Folder Penyimpanan Model", value="saved_models")
+model_dir = st.sidebar.text_input("Folder Penyimpanan Model", value="")
 
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
