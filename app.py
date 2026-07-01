@@ -130,9 +130,11 @@ if uploaded_file is not None:
         format_func=lambda x: x.replace('_', ' ')
     )
     
-    weights_path = os.path.join(model_dir, f'weights_{pilihan_komoditas}.npy')
-    scaler_path = os.path.join(model_dir, f'scaler_{pilihan_komoditas}.pkl')
-    meta_path = os.path.join(model_dir, f'metadata_{pilihan_komoditas}.pkl')
+    nama_file_model = pilihan_komoditas.replace(' ', '_')
+    
+    weights_path = os.path.join(model_dir, f'weights_{nama_file_model}.npy')
+    scaler_path = os.path.join(model_dir, f'scaler_{nama_file_model}.pkl')
+    meta_path = os.path.join(model_dir, f'metadata_{nama_file_model}.pkl')
     
     if os.path.exists(weights_path) and os.path.exists(scaler_path) and os.path.exists(meta_path):
         with open(scaler_path, 'rb') as f:
